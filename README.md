@@ -20,3 +20,8 @@ cd spoon
 For now only the `list` and `new` commands are available. Type `spoon help <command>` to get some information.
 
 Enjoy!
+
+## Credit
+
+Built using the
+excellent [sub framework](https://github.com/basecamp/sub).
