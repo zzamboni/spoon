@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# Usage: spoon list [-l]
+# Summary: List installed/loaded Spoons
+# Help: List spoons. For installed Spoons, their name is listed. For
+# loaded Spoons, their name and version are printed. With -l, it only
+# lists loaded Spoons.
+
+set -e
+
+ONLY_LOADED="false"
+while getopts "l" opt; do
+    case $opt in
+        l)
+            ONLY_LOADED="true"
+            ;;
+        \?)
+            exit 1
+            ;;
+    esac
+done
+
+hs -c "spoon.SpoonUtils:printList($ONLY_LOADED)"

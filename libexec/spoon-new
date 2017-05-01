@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Usage: spoon new SpoonName
+# Summary: Create a new Spoon skeleton
+# Help: Creates a skeleton Spoon with the given name, under the
+# current directory. A sample init.lua file is provided.
+
+set -e
+
+NAME=$1
+DIR=$(pwd)
+
+hs -c "spoon.SpoonUtils:newSpoon(\"$NAME\", \"$DIR\")"
