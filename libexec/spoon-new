@@ -8,5 +8,13 @@ set -e
 
 NAME=$1
 DIR=$(pwd)
+USER="$(git config user.name) <$(git config user.email)>"
 
-hs -c "spoon.SpoonUtils:newSpoon(\"$NAME\", \"$DIR\")"
+hs -c "dir=hs.spoons.newSpoon(\"$NAME\", \"$DIR\", {author = \"$USER\"})
+if dir then
+  print(\"Created new spoon template in \" .. dir)
+else
+  print(\"An error occurred creating the spoon template.\")
+  os.exit(1)
+end
+"

@@ -19,4 +19,4 @@ while getopts "l" opt; do
     esac
 done
 
-hs -c "spoon.SpoonUtils:printList($ONLY_LOADED)"
+hs -c "hs.spoons.printList($ONLY_LOADED); return ''"
